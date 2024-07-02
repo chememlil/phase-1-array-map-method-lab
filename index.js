@@ -12,5 +12,26 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
-}
+  return tutorials.map(function(title) {
+    // Split the title into words
+    let words = title.split(' ');
+    
+    // Capitalize each word
+    let capitalizedWords = words.map(function(word) {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    });
+    
+    // Join the capitalized words into a title case sentence
+    let titleCaseTitle = capitalizedWords.join(' ');
+    
+    return titleCaseTitle;
+  });
+};
+
+// Example output
+console.log(titleCased());
+
+// Export the function for testing purposes if necessary
+module.exports = {
+  titleCased
+};
